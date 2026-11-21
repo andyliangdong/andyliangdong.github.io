@@ -1,0 +1,240 @@
+/* Site-wide look on top of PaperMod: serif body, sans UI, one accent colour, calmer cards. */
+
+:root {
+    --main-width: 740px;
+    --radius: 10px;
+    --accent: #1f5fbf;
+    --accent-soft: rgba(31, 95, 191, 0.08);
+    --theme: #fcfcfb;
+    --entry: #ffffff;
+    --primary: #16181d;
+    --content: #23262d;
+    --secondary: #5f6672;
+    --border: #e7e8ea;
+    --code-bg: #f3f4f6;
+    --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --font-ui: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:root[data-theme="dark"] {
+    --accent: #7fb0ff;
+    --accent-soft: rgba(127, 176, 255, 0.10);
+    --theme: #17181b;
+    --entry: #1f2125;
+    --primary: #e8e9eb;
+    --content: #d0d2d6;
+    --secondary: #9aa0aa;
+    --border: #2c2f35;
+    --code-bg: #2a2d33;
+}
+
+body {
+    font-family: var(--font-ui);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- header ---------- */
+.header {
+    border-top: 3px solid var(--accent);
+}
+.nav .logo a {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+#menu a {
+    font-size: 15px;
+    color: var(--secondary);
+}
+#menu a:hover,
+#menu .active {
+    color: var(--primary);
+}
+
+/* ---------- home intro ---------- */
+.home-info {
+    margin: 32px 0 40px;
+    padding: 0 0 28px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--border);
+}
+.home-info .entry-header h1 {
+    font-size: 34px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+.home-info .entry-content {
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--secondary);
+    -webkit-line-clamp: unset;
+}
+.home-info .social-icons a svg {
+    color: var(--secondary);
+}
+
+/* ---------- post cards ---------- */
+.post-entry {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+.post-entry:hover {
+    border-color: var(--accent);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
+}
+.entry-cover {
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: #fff;
+}
+.entry-header h2 {
+    font-size: 22px;
+    letter-spacing: -0.01em;
+}
+.entry-content {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--secondary);
+}
+.entry-footer {
+    font-size: 13px;
+}
+
+/* ---------- single post ---------- */
+.post-title {
+    font-size: 38px;
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+}
+.post-description {
+    font-family: var(--font-body);
+}
+.post-meta {
+    font-size: 14px;
+}
+.post-content {
+    font-family: var(--font-body);
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--content);
+}
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+    font-family: var(--font-ui);
+    letter-spacing: -0.015em;
+}
+.post-content h2 {
+    margin: 48px 0 16px;
+    font-size: 27px;
+}
+.post-content h3 {
+    margin: 32px 0 12px;
+    font-size: 21px;
+}
+.post-content a {
+    color: var(--accent);
+    box-shadow: none;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+.post-content a:hover {
+    text-decoration-thickness: 2px;
+}
+.post-content li {
+    margin-bottom: 6px;
+}
+
+/* TL;DR and other callouts: write them as blockquotes */
+.post-content blockquote {
+    margin: 28px 0;
+    padding: 16px 20px;
+    border-inline-start: 4px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    background: var(--accent-soft);
+    color: var(--content);
+}
+.post-content blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* figures */
+.post-content img {
+    margin: 28px auto 8px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: #fff;
+}
+
+/* tables */
+.post-content table {
+    font-family: var(--font-ui);
+    font-size: 15px;
+    margin: 24px 0;
+}
+.post-content table th {
+    background: var(--code-bg);
+    font-weight: 600;
+}
+.post-content table th,
+.post-content table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+}
+.post-content table tr:nth-child(even) td {
+    background: var(--accent-soft);
+}
+
+/* code */
+.post-content code,
+.post-content pre code {
+    font-family: var(--font-mono);
+    font-size: 0.82em;
+}
+.post-content pre code {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* math */
+.post-content .katex-display {
+    margin: 24px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* table of contents */
+.toc {
+    font-family: var(--font-ui);
+    font-size: 15px;
+    border-radius: var(--radius);
+}
+
+/* tags at the bottom of a post */
+.post-tags a {
+    font-family: var(--font-ui);
+    border-radius: 999px;
+}
+
+/* ---------- footer ---------- */
+.footer {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ---------- phones ---------- */
+@media screen and (max-width: 768px) {
+    .post-title { font-size: 30px; }
+    .post-content { font-size: 18px; }
+    .home-info .entry-header h1 { font-size: 28px; }
+    .post-content table { font-size: 13px; }
+    .post-content table th,
+    .post-content table td { padding: 6px 8px; }
+}

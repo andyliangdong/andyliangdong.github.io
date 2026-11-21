@@ -5,6 +5,11 @@ draft = false
 tags = ['GRPO', 'RLVR', 'code generation', 'reward hacking']
 summary = 'Two 50-step GRPO runs on MBPP with Qwen3-0.6B. Rewarding only the test shown in the prompt took the visible-test pass rate from 31% to 93% and the full-test pass rate from 24% to 0%.'
 math = true
+
+[cover]
+  image = 'curves.png'
+  alt = 'Held-out pass rates: the visible-test reward climbs to 93% while the all-tests pass rate falls to 0%'
+  hiddenInSingle = true
 +++
 
 In RL with verifiable rewards, *the verifier is the task*. Whatever the checker doesn't check, the
@@ -12,8 +17,8 @@ policy is free to ignore. I wanted to see how fast that happens with a small cod
 the cheapest experiment I could think of: two GRPO runs that differ only in how many unit tests the
 reward looks at.
 
-The short version: rewarding only the visible test took the visible-test pass rate from 31% to 93%
-and the full-test pass rate from 24% to **0%**, all within 50 steps.
+> **TL;DR** Rewarding only the visible test took the visible-test pass rate from 31% to 93% and
+> the full-test pass rate from 24% to **0%**, all within 50 steps.
 
 ## Background
 

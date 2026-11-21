@@ -24,11 +24,17 @@ enableRobotsTXT = true
 
   [params.homeInfoParams]
     Title = 'Reproducing RL-for-LLM papers on a single GPU'
-    Content = 'GRPO, verifiable rewards, code generation, and reward hacking: small-scale reproductions with code and honest caveats. Views are my own.'
+    Content = 'Controlled experiments on GRPO, verifiable rewards, code generation, and reward hacking. Every post comes with its code, its logs, and its caveats.'
 
   [[params.socialIcons]]
     name = 'github'
     url = 'https://github.com/andyliangdong'
+  [[params.socialIcons]]
+    name = 'code'
+    url = 'https://github.com/andyliangdong/llm-repro'
+  [[params.socialIcons]]
+    name = 'rss'
+    url = '/index.xml'
 
   [params.footer]
     text = 'Views are my own and do not represent any employer.'
