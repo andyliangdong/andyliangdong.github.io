@@ -23,7 +23,7 @@ enableRobotsTXT = true
   TocOpen = false
 
   [params.homeInfoParams]
-    Title = 'Reproducing RL-for-LLM papers on a single GPU'
+    Title = 'Reproducing RL-for-LLM papers'
     Content = 'Controlled experiments on GRPO, verifiable rewards, code generation, and reward hacking. Every post comes with its code, its logs, and its caveats.'
 
   [[params.socialIcons]]
