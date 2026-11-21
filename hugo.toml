@@ -1,0 +1,59 @@
+baseURL = 'https://andyliangdong.github.io/'
+locale = 'en-us'
+title = 'Liang Dong'
+theme = 'PaperMod'
+copyright = '© 2026 Liang Dong · Code and text licensed under Apache 2.0'
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 10
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+
+[params]
+  author = 'Liang Dong'
+  description = 'Small-scale reproductions of RL-for-LLM papers on my own GPUs.'
+  defaultTheme = 'auto'
+  ShowReadingTime = true
+  ShowCodeCopyButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowToc = true
+  TocOpen = false
+
+  [params.homeInfoParams]
+    Title = 'Reproducing RL-for-LLM papers on a single GPU'
+    Content = 'GRPO, verifiable rewards, code generation, and reward hacking: small-scale reproductions with code and honest caveats. Views are my own.'
+
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/andyliangdong'
+
+  [params.footer]
+    text = 'Views are my own and do not represent any employer.'
+
+[menu]
+  [[menu.main]]
+    identifier = 'posts'
+    name = 'Posts'
+    url = '/posts/'
+    weight = 10
+  [[menu.main]]
+    identifier = 'tags'
+    name = 'Tags'
+    url = '/tags/'
+    weight = 20
+  [[menu.main]]
+    identifier = 'about'
+    name = 'About'
+    url = '/about/'
+    weight = 30
+
+[markup.goldmark.renderer]
+  unsafe = false
+[markup.goldmark.extensions.passthrough]
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block = [['$$', '$$']]
+    inline = [['\(', '\)']]
